@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://cot3mhsdgbimu"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_b3l61"]
+[ext_resource type="PackedScene" uid="uid://p1ldt6iy4mdr" path="res://scenes/unit.tscn" id="2_qjqoi"]
+[ext_resource type="PackedScene" uid="uid://bn3l0amo6yh1a" path="res://scenes/world.tscn" id="3_ymow5"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_3e4h4"]
+[ext_resource type="PackedScene" uid="uid://ba54ak6p3g7x6" path="res://scenes/interface.tscn" id="5_5ykhr"]
+[ext_resource type="Script" path="res://scripts/interface.gd" id="6_nbh60"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_b3l61")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Units" type="Node2D" parent="."]
+
+[node name="Unit" parent="Units" groups=["units"] instance=ExtResource("2_qjqoi")]
+z_index = 1
+position = Vector2(4538, 2617)
+
+[node name="World" parent="." instance=ExtResource("3_ymow5")]
+scale = Vector2(8, 8)
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+ignore_rotation = false
+limit_left = 0
+limit_top = 0
+script = ExtResource("4_3e4h4")
+
+[node name="Interface" parent="." instance=ExtResource("5_5ykhr")]
+script = ExtResource("6_nbh60")
+
+[connection signal="unit_created" from="Interface" to="." method="_on_unit_added"]

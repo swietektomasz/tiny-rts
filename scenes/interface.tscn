@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ba54ak6p3g7x6"]
+
+[node name="Interface" type="Node2D"]
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="Debug"]
+offset_left = 1056.0
+offset_top = 360.0
+offset_right = 1151.0
+offset_bottom = 391.0
+text = "Create unit"
+
+[node name="Text" type="RichTextLabel" parent="Debug"]
+offset_right = 240.0
+offset_bottom = 200.0
+bbcode_enabled = true

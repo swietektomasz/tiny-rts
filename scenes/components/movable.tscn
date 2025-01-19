@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1wsr0j5p8c54"]
+
+[ext_resource type="Script" path="res://scripts/components/movable.gd" id="1_k01yi"]
+
+[node name="Movable" type="Node2D"]
+script = ExtResource("1_k01yi")
